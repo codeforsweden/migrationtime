@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="style.css">
 <script src="https://d3js.org/d3.v6.js"></script>
-<script src="/citizenship.js"></script>
+<script src="citizenship.js"></script>
 </head>
 <body>
   <h1>Average time it takes to become a Swedish citizen</h1>
@@ -13,7 +13,7 @@
   <div id="buttons"></div>
   <div id="tooltip"></div>
   <svg id="playground" width="1600" height="1000"></svg>
-  <a href="https://github.com/kisabaka/migrationtime">Clone on Github</a>
+  <a href="https://github.com/codeforsweden/migrationtime">Clone on Github</a>
   <script>
     let currentYear,
         citizenshipData,
@@ -33,7 +33,7 @@
   
     Promise.all([
       d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"),
-      CitizenshipData.loadCsv("/data/citizenship.csv")
+      CitizenshipData.loadCsv("data/citizenship.csv")
     ]).then(function(loadData){
       worldMap = loadData[0];
       citizenshipData = loadData[1];
